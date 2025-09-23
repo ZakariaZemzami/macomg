@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0c10" />
+  <title>MACOMG • Digital Courses & Subscriptions</title>
+  <meta name="description" content="Buy Busuu, Udemy, Coursera, and edX from MACOMG. Order via WhatsApp or form. Fast delivery & friendly support." />
+  <style>
+    /* ====== RESET / TOKENS ====== */
+    :root{
+      --bg: #0b0c10;
+      --bg-2:#0e1117;
+      --card:#0c1018;
+      --muted:#97a1bb;
+      --txt:#eef1f7;
+      --brand:#22c55e; /* green */
+      --brand-2:#3b82f6; /* blue */
+      --accent:#f59e0b; /* amber */
+      --border:#1b2540;
+      --radius: 18px;
+      --shadow: 0 10px 32px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{font:15.5px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial; color:var(--txt); background:linear-gradient(180deg,#0a0b10, var(--bg-2) 45%, #0a0b10)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .container{width:min(1120px,92%);margin-inline:auto}
+    .btn{appearance:none;border:0;border-radius:14px;padding:14px 16px;cursor:pointer;font-weight:700;transition:.18s;display:inline-flex;align-items:center;gap:.55rem}
+    .btn:active{transform:translateY(1px)}
+    .btn.primary{background:var(--brand);color:#06250f}
+    .btn.whatsapp{background:#25D366;color:#06250f}
+    .btn.ghost{background:transparent;border:1px solid #22304b;color:var(--txt)}
+    .badge{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .6rem;border-radius:999px;background:#142135;border:1px solid #22304b;color:#aab2c8;font-weight:700;font-size:.78rem}
+
+    /* ====== HEADER ====== */
+    header{position:sticky;top:0;z-index:50;background:rgb(13 16 24 / .78);backdrop-filter: blur(10px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:900}
+    .brand-logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#06250f}
+    .nav-actions{display:flex;align-items:center;gap:.5rem}
+
+    /* Language switch */
+    .lang{display:flex;gap:.35rem;background:#121826;border:1px solid #1e2940;border-radius:999px;padding:.18rem}
+    .lang button{background:transparent;border:0;color:#aab2c8;font-weight:800;border-radius:999px;padding:.5rem .75rem;cursor:pointer}
+    .lang button.active{background:#243048;color:#fff}
+
+    /* ====== HERO (with your image) ====== */
+    .hero{position:relative;isolation:isolate;border-radius:20px;overflow:hidden;border:1px solid var(--border);min-height:62svh;display:grid}
+    .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.05) contrast(1.02)}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, #0b0c10 0%, #0b0c10c0 35%, #0b0c1030 60%, transparent 100%)}
+    .hero .content{position:relative;z-index:2;display:grid;align-content:center;padding:clamp(16px, 4vw, 36px)}
+    .hero h1{font-size:clamp(1.6rem, 5.5vw, 2.7rem);line-height:1.12;margin:0 0 10px;letter-spacing:.2px}
+    .hero p{margin:0 0 16px;color:#c1c9df;max-width:55ch}
+    .hero .cta{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* ====== SECTIONS ====== */
+    section{padding:26px 0}
+    h2{font-size:clamp(1.25rem, 3.2vw, 2rem);margin:0 0 12px}
+    .sub{color:#9fb0d1;margin-top:-4px}
+
+    /* ====== PRODUCTS ====== */
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .card{background:linear-gradient(180deg,#0e141f,#0b0e15); border:1px solid var(--border);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:10px}
+    .card h3{margin:0;font-size:1.1rem}
+    .price{font-weight:900;font-size:1.3rem}
+    .features{color:#a9b1c9;font-size:.95rem}
+    .card .actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+
+    /* ====== HOW TO ORDER ====== */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .step{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
+    .step strong{display:block;margin-bottom:6px}
+
+    /* ====== FORM ====== */
+    .form{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;display:grid;gap:12px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    label{display:block;font-weight:800;margin-bottom:4px}
+    input,select,textarea{width:100%;background:#0b0f17;border:1px solid #1e2940;border-radius:12px;padding:13px;color:#dde3f7}
+    textarea{min-height:110px;resize:vertical}
+    .radio{display:flex;gap:12px;align-items:center}
+
+    /* ====== FOOTER ====== */
+    footer{border-top:1px solid var(--border);color:#aab2c8;padding:22px 0;margin-top:30px}
+
+    /* ====== MOBILE ENHANCEMENTS ====== */
+    .sticky-cta{position:sticky;bottom:0;inset-inline:0;background:rgb(10 12 16 /.72);backdrop-filter:blur(8px);border-top:1px solid var(--border);padding:10px;display:none}
+    .sticky-cta .inner{display:flex;gap:10px}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr 1fr}
+      .steps{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr}
+    }
+    @media (max-width: 680px){
+      body{font-size:15px}
+      .grid{grid-template-columns:1fr}
+      .hero{min-height:64svh}
+      .sticky-cta{display:block}
+      .nav-actions>a.btn.ghost{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" id="top">
+      <div class="brand">
+        <div class="brand-logo">M</div>
+        <div>
+          <div style="font-size:1rem">MACOMG</div>
+          <div style="font-size:.8rem;color:#93a0bd">Digital Store</div>
+        </div>
+      </div>
+      <nav class="nav-actions">
+        <a href="#products" class="btn ghost" data-i="nav_products">Products</a>
+        <a href="#how" class="btn ghost" data-i="nav_how">How to order</a>
+        <a href="#contact" class="btn primary" data-i="nav_contact">Contact</a>
+        <div class="lang" aria-label="Language switch">
+          <button class="active" data-lang="en">EN</button>
+          <button data-lang="fr">FR</button>
+          <button data-lang="ar">AR</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO with your uploaded image as background -->
+    <section class="hero" aria-label="Hero">
+      <img class="bg" src="WhatsApp Image 2025-09-22 at 14.30.00_55444081.jpg" alt="Unlock your potential banner" loading="eager" />
+      <div class="content">
+        <span class="badge">✨ <span data-i="badge">Fast delivery • Trusted support</span></span>
+        <h1 data-i="h1">Premium access to Busuu, Udemy, Coursera & edX — in one place</h1>
+        <p data-i="h1p">Order securely via WhatsApp or the form. We respond quickly and help you get started the same day.</p>
+        <div class="cta">
+          <a class="btn whatsapp" id="wa-cta"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.94 11.94 0 006 2a12 12 0 00-3.92 18.72L2 22l1.33-.35A12 12 0 0012 24a11.94 11.94 0 008.52-3.48A11.94 11.94 0 0024 12a11.94 11.94 0 00-3.48-8.52zM12 22a10 10 0 01-5.1-1.41l-.37-.22-3 .78.8-2.9-.24-.4A10 10 0 1112 22zm5.59-7.41c-.31-.15-1.84-.9-2.13-1-.29-.11-.5-.15-.72.15-.21.29-.83 1-.1 1.2.72.2 1.23.94 1.42 1.25.19.31.1.57-.05.79-.15.22-.66.78-1.27.81-.61.03-1.39-.4-2.32-1.14-.93-.74-2.06-2.13-2.31-2.56-.25-.43-.5-1.18-.07-1.67.43-.49.95-.92 1.08-1.2.13-.28.07-.53 0-.74-.07-.22-.72-1.76-.99-2.41-.26-.65-.53-.56-.72-.57-.19-.01-.41-.02-.63-.02-.22 0-.58.08-.89.39-.31.31-1.17 1.14-1.17 2.78s1.2 3.22 1.37 3.44c.17.22 2.33 3.62 5.66 4.94.79.32 1.4.51 1.88.65.79.23 1.51.2 2.08.12.64-.1 1.96-.8 2.23-1.57.27-.77.27-1.44.19-1.57-.08-.13-.28-.21-.59-.36z" fill="currentColor"/></svg>
+            <span data-i="cta_whatsapp">Order on WhatsApp</span></a>
+          <a href="#products" class="btn ghost" data-i="cta_browse">Browse products</a>
+        </div>
+        <div style="margin-top:8px;color:#99a6c6" data-i="contact_line">WhatsApp: +2126992895868 • Email: Macomgld@gmail.com</div>
+      </div>
+    </section>
+
+    <section id="products">
+      <h2 data-i="products_h2">Our Products</h2>
+      <p class="sub" data-i="products_sub">Choose your platform and duration. Simple prices, fast delivery.</p>
+      <div class="grid" id="product-grid"></div>
+    </section>
+
+    <section id="how">
+      <h2 data-i="how_h2">How to order</h2>
+      <div class="steps">
+        <div class="step">
+          <strong data-i="s1_t">1) Pick your product</strong>
+          <div data-i="s1_d">Select Busuu, Udemy, Coursera, or edX and click “Order”.</div>
+        </div>
+        <div class="step">
+          <strong data-i="s2_t">2) Send details</strong>
+          <div data-i="s2_d">Order via WhatsApp or the form. We confirm your request and timing.</div>
+        </div>
+        <div class="step">
+          <strong data-i="s3_t">3) Delivery & support</strong>
+          <div data-i="s3_d">We guide you step‑by‑step until everything works perfectly.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 data-i="contact_h2">Order Form</h2>
+      <form class="form" id="orderForm">
+        <div class="row">
+          <div>
+            <label for="name" data-i="f_name_l">Full name</label>
+            <input id="name" name="name" required placeholder="John Doe"/>
+          </div>
+          <div>
+            <label for="email" data-i="f_email_l">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com"/>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="product" data-i="f_product_l">Product</label>
+            <select id="product" name="product" required></select>
+          </div>
+          <div>
+            <label for="method" data-i="f_method_l">Order method</label>
+            <div class="radio">
+              <input type="radio" id="m_whatsapp" name="method" value="whatsapp" checked>
+              <label for="m_whatsapp">WhatsApp</label>
+              <input type="radio" id="m_email" name="method" value="email">
+              <label for="m_email">Email</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="msg" data-i="f_msg_l">Message (optional)</label>
+          <textarea id="msg" name="msg" placeholder="Any notes or questions…"></textarea>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn primary" type="submit" data-i="f_submit">Send order</button>
+          <a class="btn whatsapp" id="wa-quick" href="#" data-i="f_whatsapp_direct">Open WhatsApp</a>
+        </div>
+        <div id="formNote" class="sub"></div>
+      </form>
+    </section>
+
+    <section>
+      <h2 data-i="why_h2">Why choose MACOMG?</h2>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="card"><h3 data-i="why_1_t">Quick activation</h3><p class="features" data-i="why_1_d">Most orders processed the same day with clear guidance.</p></div>
+        <div class="card"><h3 data-i="why_2_t">Trusted support</h3><p class="features" data-i="why_2_d">We help you set up and troubleshoot via WhatsApp.</p></div>
+        <div class="card"><h3 data-i="why_3_t">Simple & transparent</h3><p class="features" data-i="why_3_d">Fixed pricing, no hidden fees, and flexible ordering.</p></div>
+      </div>
+    </section>
+
+    <!-- Mobile sticky CTA -->
+    <div class="sticky-cta">
+      <div class="inner container">
+        <a class="btn whatsapp" id="wa-cta-bottom" style="flex:1;justify-content:center">WhatsApp</a>
+        <a class="btn primary" href="#contact" style="flex:1;justify-content:center" data-i="nav_contact">Contact</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="year"></span> MACOMG — <span data-i="footer_line">Digital subscriptions store. All rights reserved.</span></div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="btn ghost" href="#top" data-i="back_to_top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="fab btn whatsapp" id="wa-fab" aria-label="Chat on WhatsApp">Chat</a>
+
+  <script>
+    // ====== STORE SETTINGS ======
+    const STORE = {
+      name: 'MACOMG',
+      whatsapp: '2126992895868', // E.164 without +
+      email: 'Macomgld@gmail.com',
+      products: [
+        { id: 'busuu',    title: 'Busuu',    price: 40, period: '12 months', features: ['All levels', 'Certificate options', 'Multi‑device'] },
+        { id: 'udemy',    title: 'Udemy',    price: 15, period: '1 course',  features: ['Lifetime course access', 'Top instructors', 'Self‑paced'] },
+        { id: 'coursera', title: 'Coursera', price: 30, period: '12 months', features: ['Guided projects', 'Professional certs', 'University content'] },
+        { id: 'edx',      title: 'edX',      price: 35, period: '12 months', features: ['Micro‑courses', 'University partners', 'Flexible learning'] },
+      ]
+    }
+
+    // ====== I18N (EN/FR/AR) ======
+    const I18N = {
+      en: {
+        badge: 'Fast delivery • Trusted support',
+        h1: 'Premium access to Busuu, Udemy, Coursera & edX — in one place',
+        h1p: 'Order securely via WhatsApp or the form. We respond quickly and help you get started the same day.',
+        cta_whatsapp: 'Order on WhatsApp',
+        cta_browse: 'Browse products',
+        contact_line: `WhatsApp: +${STORE.whatsapp} • Email: ${STORE.email}`,
+        nav_products: 'Products', nav_how: 'How to order', nav_contact: 'Contact',
+        products_h2: 'Our Products', products_sub: 'Choose your platform and duration. Simple prices, fast delivery.',
+        how_h2: 'How to order',
+        s1_t:'1) Pick your product', s1_d:'Select Busuu, Udemy, Coursera, or edX and click “Order”.',
+        s2_t:'2) Send details', s2_d:'Order via WhatsApp or the form. We confirm your request and timing.',
+        s3_t:'3) Delivery & support', s3_d:'We guide you step‑by‑step until everything works perfectly.',
+        contact_h2:'Order Form', f_name_l:'Full name', f_email_l:'Email', f_product_l:'Product', f_method_l:'Order method', f_msg_l:'Message (optional)', f_submit:'Send order', f_whatsapp_direct:'Open WhatsApp',
+        why_h2:'Why choose MACOMG?', why_1_t:'Quick activation', why_1_d:'Most orders processed the same day with clear guidance.', why_2_t:'Trusted support', why_2_d:'We help you set up and troubleshoot via WhatsApp.', why_3_t:'Simple & transparent', why_3_d:'Fixed pricing, no hidden fees, and flexible ordering.',
+        footer_line:'Digital subscriptions store. All rights reserved.', back_to_top:'Back to top'
+      },
+      fr: {
+        badge: 'Livraison rapide • Support fiable',
+        h1: 'Accès premium à Busuu, Udemy, Coursera & edX — au même endroit',
+        h1p: 'Commandez par WhatsApp ou formulaire. Réponse rapide et accompagnement le jour‑même.',
+        cta_whatsapp: 'Commander sur WhatsApp', cta_browse:'Voir les produits',
+        contact_line: `WhatsApp : +${STORE.whatsapp} • Email : ${STORE.email}`,
+        nav_products: 'Produits', nav_how: 'Comment commander', nav_contact: 'Contact',
+        products_h2: 'Nos Produits', products_sub: 'Choisissez la plateforme et la durée. Prix simples, livraison rapide.',
+        how_h2: 'Comment commander',
+        s1_t:'1) Choisissez votre produit', s1_d:'Sélectionnez Busuu, Udemy, Coursera ou edX puis cliquez « Commander ».',
+        s2_t:'2) Envoyez les détails', s2_d:'Par WhatsApp ou formulaire. Nous confirmons la demande et le délai.',
+        s3_t:'3) Livraison & support', s3_d:'Nous vous guidons pas à pas jusqu’à ce que tout fonctionne parfaitement.',
+        contact_h2:'Formulaire de commande', f_name_l:'Nom complet', f_email_l:'Email', f_product_l:'Produit', f_method_l:'Méthode de commande', f_msg_l:'Message (optionnel)', f_submit:'Envoyer', f_whatsapp_direct:'Ouvrir WhatsApp',
+        why_h2:'Pourquoi choisir MACOMG ?', why_1_t:'Activation rapide', why_1_d:'La plupart des commandes sont traitées le jour‑même.', why_2_t:'Support fiable', why_2_d:'Assistance et dépannage via WhatsApp.',
+        why_3_t:'Simple & transparent', why_3_d:'Prix fixes, pas de frais cachés, commande flexible.',
+        footer_line:'Boutique d’abonnements numériques. Tous droits réservés.', back_to_top:'Haut de page'
+      },
+      ar: {
+        badge: 'تسليم سريع • دعم موثوق',
+        h1: 'وصول مميز إلى Busuu وUdemy وCoursera وedX — في مكان واحد',
+        h1p: 'اطلب عبر واتساب أو الاستمارة. نرد بسرعة ونساعدك لتبدأ في نفس اليوم.',
+        cta_whatsapp: 'اطلب عبر واتساب', cta_browse:'تصفح المنتجات',
+        contact_line: `واتساب: +${STORE.whatsapp} • البريد: ${STORE.email}`,
+        nav_products: 'المنتجات', nav_how: 'كيفية الطلب', nav_contact: 'اتصل بنا',
+        products_h2: 'منتجاتنا', products_sub: 'اختر المنصة والمدة. أسعار واضحة وتسليم سريع.',
+        how_h2: 'كيفية الطلب',
+        s1_t:'1) اختر المنتج', s1_d:'اختر Busuu أو Udemy أو Coursera أو edX ثم اضغط «اطلب».',
+        s2_t:'2) أرسل التفاصيل', s2_d:'اطلب عبر واتساب أو الاستمارة. نؤكد لك الطلب والوقت.',
+        s3_t:'3) التسليم والدعم', s3_d:'نرشدك خطوة بخطوة حتى يعمل كل شيء بشكل ممتاز.',
+        contact_h2:'نموذج الطلب', f_name_l:'الاسم الكامل', f_email_l:'البريد الإلكتروني', f_product_l:'المنتج', f_method_l:'طريقة الطلب', f_msg_l:'ملاحظة (اختياري)', f_submit:'إرسال الطلب', f_whatsapp_direct:'فتح واتساب',
+        why_h2:'لماذا MACOMG؟', why_1_t:'تفعيل سريع', why_1_d:'معظم الطلبات تتم في نفس اليوم بإرشادات واضحة.', why_2_t:'دعم موثوق', why_2_d:'نساعدك في الإعداد والدعم عبر واتساب.', why_3_t:'بسيط وشفاف', why_3_d:'أسعار ثابتة بدون رسوم مخفية وطرق طلب مرنة.',
+        footer_line:'متجر اشتراكات رقمية. جميع الحقوق محفوظة.', back_to_top:'العودة للأعلى'
+      }
+    }
+
+    const t = (lang) => {
+      for(const el of document.querySelectorAll('[data-i]')){
+        const k = el.getAttribute('data-i');
+        if(I18N[lang][k]) el.textContent = I18N[lang][k];
+      }
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    }
+
+    // Render products
+    const grid = document.getElementById('product-grid');
+    const select = document.getElementById('product');
+    const makeCard = (p) => {
+      const li = document.createElement('article');
+      li.className = 'card';
+      li.innerHTML = `
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <h3>${p.title}</h3>
+          <span class="badge">${p.period}</span>
+        </div>
+        <div class="price">$${p.price}<span style="font-weight:600;font-size:.95rem;color:#9fb0d1"> / ${p.period.replace('1 course','course')}</span></div>
+        <ul class="features">${p.features.map(f=>`<li>• ${f}</li>`).join('')}</ul>
+        <div class="actions">
+          <button class="btn primary" data-order="${p.id}">Order</button>
+          <a class="btn whatsapp" href="${waLink(p)}" target="_blank" rel="noopener">WhatsApp</a>
+        </div>`;
+      return li;
+    }
+
+    const waLink = (p, withName=false) => {
+      const base = `https://wa.me/${STORE.whatsapp}`;
+      const text = encodeURIComponent(`Hello MACOMG! I want to order: ${p.title} (${p.period}) — $${p.price}.\nName: ${withName ? (document.getElementById('name').value||'') : ''}\nEmail: ${withName ? (document.getElementById('email').value||'') : ''}`);
+      return `${base}?text=${text}`;
+    }
+
+    function renderProducts(){
+      grid.innerHTML = '';
+      STORE.products.forEach(p=>grid.appendChild(makeCard(p)));
+      select.innerHTML = '<option value="" disabled selected>Select…</option>' + STORE.products.map(p=>`<option value="${p.id}">${p.title} — $${p.price} / ${p.period}</option>`).join('');
+    }
+
+    renderProducts();
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Language buttons
+    const langBtns = document.querySelectorAll('.lang button');
+    langBtns.forEach(b=>b.addEventListener('click',()=>{
+      langBtns.forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      t(b.dataset.lang);
+    }))
+    t('en');
+
+    // WhatsApp links
+    const waCta = document.getElementById('wa-cta');
+    waCta.href = `https://wa.me/${STORE.whatsapp}?text=${encodeURIComponent('Hello MACOMG! I want to order.')}`;
+    const fab = document.getElementById('wa-fab');
+    fab.href = `https://wa.me/${STORE.whatsapp}?text=${encodeURIComponent('Hello! I have a question.')}`;
+    const waCtaBottom = document.getElementById('wa-cta-bottom');
+    waCtaBottom.href = `https://wa.me/${STORE.whatsapp}?text=${encodeURIComponent('Hello MACOMG! I want to order.')}`;
+
+    // Order buttons inside cards
+    grid.addEventListener('click',(e)=>{
+      const btn = e.target.closest('button[data-order]');
+      if(!btn) return;
+      const product = STORE.products.find(p=>p.id===btn.dataset.order);
+      select.value = product.id;
+      document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+    })
+
+    // Form submit handler
+    const form = document.getElementById('orderForm');
+    const note = document.getElementById('formNote');
+    const quick = document.getElementById('wa-quick');
+
+    form.addEventListener('submit',(e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const product = STORE.products.find(p=>p.id===data.product);
+      if(!product){
+        note.textContent = 'Please select a product.';
+        return;
+      }
+      const summary = `Name: ${data.name}\nEmail: ${data.email}\nProduct: ${product.title} — $${product.price} / ${product.period}\nMessage: ${data.msg||'-'}`;
+      if(data.method === 'whatsapp'){
+        window.open(`https://wa.me/${STORE.whatsapp}?text=${encodeURIComponent('Order details:\n'+summary)}`,'_blank');
+        note.textContent = 'Opening WhatsApp…';
+      } else {
+        const subject = encodeURIComponent(`[ORDER] ${product.title} — ${data.name}`);
+        const body = encodeURIComponent(summary);
+        window.location.href = `mailto:${STORE.email}?subject=${subject}&body=${body}`;
+        note.textContent = 'Opening your email app…';
+      }
+    })
+
+    quick.addEventListener('click',(e)=>{
+      e.preventDefault();
+      const pId = select.value || STORE.products[0].id;
+      const p = STORE.products.find(x=>x.id===pId);
+      window.open(waLink(p,true),'_blank');
+    })
+  </script>
+</body>
+</html>
